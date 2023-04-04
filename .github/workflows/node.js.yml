@@ -26,7 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd simple-frontend
     - run: npm ci
+      working-directory: ./simple-frontend
     - run: npm run build --if-present
+      working-directory: ./simple-frontend
     - run: npm test
+      working-directory: ./simple-frontend
