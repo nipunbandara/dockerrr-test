@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simple-frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: simple-frontend
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: simple-frontend
-        image: ${{ secrets.DOCKER_USERNAME }}/simple-frontend:${{ matrix.node-version }}
+        image: nipunbandara/simple-frontend:18.x
         ports:
         - containerPort: 80
